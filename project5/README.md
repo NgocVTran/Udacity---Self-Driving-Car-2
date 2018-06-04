@@ -24,6 +24,10 @@ The waypoints are preprocessed by transforming them to the vehicle's perspective
 ### Model Predictive Control with Latency:
 Addition to the cost functions suggested in the course like difference between velocity and a reference velocity, acceleration etc.
 
+
+### Video
+https://www.youtube.com/watch?v=f0RMdHUS2zk
+
 ---
 
 ## Dependencies
