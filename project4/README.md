@@ -3,6 +3,21 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection (update after reviewed)
+
+* Q: Student describes the effect of the P, I, D component of the PID algorithm in their implementation. Is it what you expected? Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.
+
+* A: PID is short of Proportional - Integral - Derivative controller.
+  * P-value means that car will steer in proportion to the current track error. If the car is to the left of the line then you would steer it to the right. P-value produces an output that is proportional to the current error. The larger this term, the larger the output, given a change in the error. If it is too small, the controller would not be too responsive.
+  * I-value is the integral control, it considers all past values of the CTE and it’s measured by the integral or the sum of the crosstrack errors over time. This will encourage the car to turn back toward the reference path. If it is set too high, the car tends to have quick oscillations, otherside this coefficient is set too low, the car may stay in one side of the reference path for long periods of time.
+  * D-value is the change in CTE from current value to the next one. It helps the car more stable in term of curve. Too high D-value will make the car steer in large angle. 
+  * Video: although the car still have oscillation, but it still can run pass the round: https://www.youtube.com/watch?v=sK_9k4N1WzI
+
+* Q: Student discusses how they chose the final hyperparameters (P, I, D coefficients). This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!
+* A: I have tunned the PID manually by setting  I-value and D-value to zeroes, and P-value was adjusted so that the vehicle would oscillate around the center of the road without crashing. Increase the Integral and decrease P-value. Then increase D-value to make system response faster.
+
+
+
 ## Dependencies
 
 * cmake >= 3.5
